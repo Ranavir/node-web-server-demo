@@ -1,6 +1,7 @@
 const express = require('express');
 const hbs = require('hbs');
 
+const port = process.env.PORT || 3000;
 var app = express();
 hbs.registerPartials(__dirname + '/views/partials');//adds the capability to handle tiles structure
 hbs.registerHelper('getFullYear',() => {
@@ -44,6 +45,6 @@ app.get('/bad', (req, res) => {
 //   console.log(`Server is up and listening on port ${listener.address().port}`);
 // });
 
-var listener = app.listen(3000,() =>{
+var listener = app.listen(port,() =>{
   console.log(`Server is up and listening on port ${listener.address().port}`);
 });
