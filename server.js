@@ -20,6 +20,7 @@ app.set('view engine', 'hbs');
 
 app.get('/',(req, res) => {
   res.render('home.hbs',{
+    pageTitle : 'Dashboard',
     name : "Ranavir",
     likes : ['Movies','Songs','Cricket']
   });
@@ -41,6 +42,11 @@ app.get('/bad', (req, res) => {
   });
 });
 
+app.get('/projects',(req, res)=>{
+  res.render('projects.hbs',{
+    pageTitle : 'Projects'
+  });
+});
 // var listener = app.listen(() =>{
 //   console.log(`Server is up and listening on port ${listener.address().port}`);
 // });
